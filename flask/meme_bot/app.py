@@ -1,18 +1,18 @@
 """A Flask Microservice"""
 import json
-from reddit import RedditMemeBot
+from meme_bot.reddit import RedditMemeBot
 from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 bot = RedditMemeBot('UCDavis', 'ClShg45mn9UHxw', 'h9TDXwNUT3X5xUUVI3WgIficOKA')
 
-@app.route('/api/ucdavismemes', methods=('GET',))
+@app.route('/api/memes', methods=('GET',))
 def get_memes():
     """Return all memes data"""
     return json.dumps(bot.get_latest_memes(0, limit=1000))
 
 
-@app.route('/api/ucdavismemes/latest', methods=('GET', ))
+@app.route('/api/memes/latest', methods=('GET', ))
 def meme_latest_feed():
     """Return latest memes"""
     offset = request.args.get('offset', default=0, type=int)
@@ -24,7 +24,7 @@ def meme_latest_feed():
                    memes=memes)
 
 
-@app.route('/api/ucdavismemes/hot', methods=('GET', ))
+@app.route('/api/memes/hot', methods=('GET', ))
 def meme_hottest_feed():
     """Return hottest memes"""
     offset = request.args.get('offset', default=0, type=int)
@@ -34,5 +34,7 @@ def meme_hottest_feed():
                    offset=offset,
                    size=len(bot.hottest), 
                    memes=memes)
-# if __name__ == "__main__":
-#     app.run(debug=True)
+
+
+if __name__ == '__main__':
+    app.run(debug=True)
