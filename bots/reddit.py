@@ -1,6 +1,5 @@
 """Memelify's Reddit Bot listens on /r/UCDavis for potential new memes. Whenever
  it found a new meme, it will:
-
     * Download post meta data (title,  image_url) to our server.
     * Create an `INSERT` query the meta data into PostgreSQL.
     * Track number of upvotes/downvotes to update the metadata.
@@ -15,6 +14,7 @@ from urllib.parse import urlparse
 
 # A set of supported meme extensions
 SUPPORTED_EXTENSION = {'jpeg', 'jpg', 'gif', 'png'}
+
 
 class RedditMemeBot:
     """Find all meme posts in a given subreddit"""

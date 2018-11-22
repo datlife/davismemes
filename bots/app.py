@@ -9,7 +9,7 @@ bot = RedditMemeBot('UCDavis', 'ClShg45mn9UHxw', 'h9TDXwNUT3X5xUUVI3WgIficOKA')
 @app.route('/api/ucdavismemes', methods=('GET',))
 def get_memes():
     """Return all memes data"""
-    return json.dumps(bot.get_latest_memes(0, limit=100))
+    return json.dumps(bot.get_latest_memes(0, limit=1000))
 
 
 @app.route('/api/ucdavismemes/latest', methods=('GET', ))
@@ -34,8 +34,5 @@ def meme_hottest_feed():
                    offset=offset,
                    size=len(bot.hottest), 
                    memes=memes)
-
-
-if __name__ == "__main__":
-    print('Bot is running')
-    app.run(debug=True)
+# if __name__ == "__main__":
+#     app.run(debug=True)
