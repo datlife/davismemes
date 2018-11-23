@@ -1,3 +1,4 @@
+⠋ Running...⠙ Running...⠹ Running...⠸ Running...⠼ Running...⠴ Running...⠦ Running...⠧ Running...⠇ Running...⠏ Running...⠋ Running...⠙ Running...⠹ Running...⠸ Running...⠼ Running...⠴ Running...⠦ Running...⠧ Running...⠇ Running...⠏ Running...⠋ Running...⠙ Running...⠹ Running...⠸ Running...⠼ Running...⠴ Running...⠦ Running...⠧ Running...⠇ Running...⠏ Running...⠋ Running...⠙ Running...⠹ Running...⠸ Running...⠼ Running...⠴ Running...⠦ Running...⠧ Running...⠇ Running...✔ Complete 
 -i https://pypi.org/simple
 certifi==2018.10.15
 chardet==3.0.4
